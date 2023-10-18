@@ -9,18 +9,31 @@ router.use((req, res, next) => {
 
 lista = [
     {
+        id: 1,
         item: 'rtx 3080',
         preco: 10000,
     },
     {
+        id: 2,
         item: 'rtx 3090',
         preco: 20000,
     },
+    {
+        id: 3,
+        item: 'rtx 3070',
+        preco: 30000,
+    },
+    {
+        id: 4,
+        item: 'rtx 3060',
+        preco: 40000,
+    }
 ]
 
 // lista completa de itens
 
 router.get('/mensagem', (req, res) => {
+    console.log(req.query)
     res.send(
         lista
     );
