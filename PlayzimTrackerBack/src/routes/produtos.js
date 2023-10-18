@@ -27,13 +27,21 @@ lista = [
         id: 4,
         item: 'rtx 3060',
         preco: 40000,
-    }
-]
+    },
+];
 
 // lista completa de itens
 
 router.get('/mensagem', (req, res) => {
-    console.log(req.query)
+    console.log(req.query);
+    const { preco } = req.query;
+    console.log(preco);
+    requestint = parseInt(preco);
+    console.log(requestint);
+    if(!isNaN(requestint)){
+
+        res.send(lista.filter((g) => g.preco > requestint))
+    } else
     res.send(
         lista
     );
