@@ -33,6 +33,7 @@ lista = [
 // lista completa de itens
 
 router.get('/mensagem', (req, res) => {
+    res.cookie("visitado", true, {maxAge: 10, httpOnly: true});
     console.log(req.query);
     const { preco } = req.query;
     console.log(preco);

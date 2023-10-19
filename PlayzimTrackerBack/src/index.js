@@ -1,8 +1,18 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const produtosRouter = require('./routes/produtos');
 
 const port = 3000;
+mongoose.connect('mongodb://127.0.0.1:27017/PlayzimTracker')
+.then(() => {
+    console.log('Conectado ao banco de dados')
+}
+).catch((err) => {
+    console.log(err);
+});
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
